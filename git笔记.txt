@@ -68,7 +68,7 @@
 
 	For every branch that is up to date or successfully pushed, add upstream (tracking) reference, used by argument-less git-pull(1) and other commands. 对于每个最新的或成功推送的分支，添加上游（跟踪）引用，该引用由无参数的git-pull（1）和其他命令使用。
 
-	git clone <url>
+	git clone <url>  <自己起库名>  从远程库下载代码
 
 	git remote  列出当前关联的远程库
 
@@ -77,3 +77,25 @@
 	git remote remove  <远程库名>   删除远程仓库的关联
 
 	git push -u <远程库名> <分支名>  向远程仓库推送代码，并和当前分支关联
+
+	git push <远程库名> <本地分支>：<远程分支>
+
+	git push  如果本地库版本低于远程库，push默认是推不上去
+
+	git fetch  要想推送成功，必须先确保本地库和远程库版本一致 fetch 会从远程仓库下载所有代码，但			是它不会将代码和当前分支自动合并，使用fetch拉取代码后，必须手动对代码进行合并
+				git merge origin/master
+
+	git pull   从服务器上拉取代码，并自动合并   === git fetch + git merge origin/master
+
+
+	tag标签
+
+		当头指针没有指向某个分支的头部时，这种状态我们成为分离头指针 HEAD detached ，分离头指针的状态下也可以操作代码，但是这些操作不会出现在任何分支上。所以注意不要再分离头指针的状态下操作仓库。
+
+		如果非得要回到后边的节点对代码进行操作，则可以选择创建分支后再操作。
+
+	git tag <版本号> 可以为提交记录设置标签。 设置标签以后，可以通过标签快速识别出不同的开发节点。
+
+	git tag -d 删除标签。
+
+	git push 远程仓库 --delete 标签名   删除远程标签
