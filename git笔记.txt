@@ -1,0 +1,79 @@
+配置： 
+ 	 
+ 	 git config --global user.name 
+
+ 	 git config --global user.email
+
+使用 git :
+	
+	git status  -- 查看文件状态
+
+	git config --list  查看git配置
+
+	git init -- 初始化仓库
+
+ 文件状态   
+
+ 		2种状态 ： 1、未跟踪 2、 已跟踪   
+
+ 		跟踪状态： 暂存  已修改  未修改   
+
+ 		git add <filename>  将文件切换到暂存状态  git add *
+
+ 		git commit -m "xxxx"    将暂存的文件存储到仓库中   状态切换状态为 未修改
+
+ 		git commit -a -m "xxxx"  提交所有已修改的文件
+
+ 		修改代码后，文件状态会变为 已修改
+
+ 	git log   查看操作日志
+
+ 	git gui  打开原带的图形窗口
+
+ 	git restore <filename>  重置文件
+
+ 	git rm <filename>  删除文件
+
+ 	git mv from to   移动（重命名）文件   git mv 1.txt 2.txt
+
+ git 分支
+
+ 	git branch  查看分支
+
+ 	git branch <name>  创建分支
+
+ 	git branch -d <name>  删除分支
+
+ 	git switch <name>  切换分支
+
+ 	git switch -c  <name>  创建并切换分支
+
+ 	git merge <name>  合并分支
+
+ 变基  
+
+ 	开发中除了通过merge来合并分支，还可以通过变基来完成分支的合并
+
+ 	git rebase <branch name>
+
+ 远程仓库 
+
+ 	git remote add origin <url>  和远程仓库建立连接
+
+ 	git branch -M main   修改分支的名字为main
+
+ 	git push -u origin main  将代码上传到服务器上
+
+ 	-u -u   --set-upstream --set-upstream
+
+	For every branch that is up to date or successfully pushed, add upstream (tracking) reference, used by argument-less git-pull(1) and other commands. 对于每个最新的或成功推送的分支，添加上游（跟踪）引用，该引用由无参数的git-pull（1）和其他命令使用。
+
+	git clone <url>
+
+	git remote  列出当前关联的远程库
+
+	git remote add <远程库名> <url>  关联远程仓库   
+
+	git remote remove  <远程库名>   删除远程仓库的关联
+
+	git push -u <远程库名> <分支名>  向远程仓库推送代码，并和当前分支关联
